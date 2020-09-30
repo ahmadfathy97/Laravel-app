@@ -14,4 +14,4 @@ understanding a lot of the basics of the framework and showing some data in home
 * layouts
 * connecting to DB
 * fetching some data
-* and more
+* and more...
