@@ -13,9 +13,10 @@ html, body {
   box-sizing: border-box;
 }
 .container{
-  min-height: 100vh;
+  min-height: 60vh;
   box-shadow: 0 0 15px var(--indigo);
   margin: 1rem auto;
+  padding: 20px auto !important;
   border-radius: 10px;
 }
 .btn-primary{

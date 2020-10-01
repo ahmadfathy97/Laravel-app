@@ -13,4 +13,6 @@
 
 Route::get('/', 'BooksController@index');
 Route::get('/books', 'BooksController@allBooks');
+Route::get('/books/add-book', 'BooksController@addBook');
+Route::post('/books/add-book', 'BooksController@newBook');
 Route::get('/books/{id}', 'BooksController@book');
