@@ -1,50 +1,52 @@
 html, body {
+  padding-top: 50px;
   background-color: #fff;
   color: #636b6f;
   font-family: 'Nunito', sans-serif;
   font-weight: 200;
-  height: 100vh;
   margin: 0;
+  overflow-x: hidden !important;
 }
-
-.full-height {
-  height: 100vh;
+*{
+  margin: 0;
+  padding: :0;
+  box-sizing: border-box;
 }
-
-.flex-center {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-.position-ref {
-  position: relative;
-}
-
-.top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
-}
-
-.books-container {
+.container{
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  box-shadow: 0 0 15px var(--indigo);
+  margin: 1rem auto;
   border-radius: 10px;
 }
-.book{
-  margin: 2rem;
-  box-shadow: 0 0 5px #222;
-  min-width: 250px;
-  padding: 1rem;
+.btn-primary{
+  background: var(--indigo);
+  border-color: var(--indigo)
+}
+.border-primary{
+  border-color: var(--indigo) !important;
+}
+.text-primary{
+  color: var(--indigo) !important
+}
+.bg-primary{
+  background: var(--indigo) !important
+}
+.btn-primary:hover{
+  background: #6652ff;
+  border-color: var(--indigo)
 
 }
-.title {
-  font-size: 44px;
+.home-header{
+  background: url('/images/books-cover.jpg') no-repeat;
+  background-size: 100% 100%;
+  border-radius: 10px 10px 0 0;
 }
-
-.m-b-md {
-    margin-bottom: 30px;
+.jumbotron{
+  background: transparent;
+  min-height: 400px;
+}
+.pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
