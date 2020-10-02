@@ -11,6 +11,12 @@
         <p><b>date:</b> {{ $book->date }}</p>
         <p><b>price:</b> {{ $book->price }}LE</p>
         <p><b>sold:</b> {{ $book->sold }} times</p>
+        <form class="float-right" action="/books/{{$book->id}}" method="post">
+          @csrf
+          @method('DELETE')
+          <button class="btn btn-danger">Delete</button>
+        </form>
+        <div class="clearfix"></div>
       </div>
   </div>
 </div>

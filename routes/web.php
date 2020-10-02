@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', 'BooksController@index');
-Route::get('/books', 'BooksController@allBooks');
-Route::get('/books/add-book', 'BooksController@addBook');
-Route::post('/books/add-book', 'BooksController@newBook');
-Route::get('/books/{id}', 'BooksController@book');
+Route::get('/', 'BooksController@bestSeller');
+Route::get('/books', 'BooksController@index');
+Route::get('/books/add-book', 'BooksController@create');
+Route::post('/books/add-book', 'BooksController@store');
+Route::get('/books/{id}', 'BooksController@show');
+Route::delete('/books/{id}', 'BooksController@destroy');

@@ -8,36 +8,37 @@ use DB;
 
 class BooksController extends Controller
 {
-    public function index(){
+    public function bestSeller(){
       $books = Book::all()->sortByDesc('sold')->take(9);
       return view('welcome', ['books' => $books]);
     }
-    public function allBooks(){
+    public function index(){
       $books = Book::paginate(6);
       echo $books;
       return view('all-books', ['books' => $books]);
     }
-    public function book($id){
-      $book = Book::all()->where('id', $id)->first();
+    public function show($id){
+      $book = Book::findOrFail($id);
       return view('book', ['book' => $book]);
     }
-    public function addBook(){
-      return view('add-book', ['success' => false]);
+    public function create(){
+      return view('add-book');
     }
-    public function newBook(Request $request){
-      $title = $request->title;
-      $author = $request->author;
-      $price = $request->price;
-      $pages = $request->pages;
-      $date = $request->date;
-      DB::table('Books')->insert([
-        'title'=> $title,
-        'pages'=> $pages,
-        'price'=> $price,
-        'author'=> $author,
-        'date'=> $date,
-        'sold'=> 0
-      ]);
-      return view('add-book', ['success' => true]);
+    public function store(Request $request){
+      $book = new Book;
+      $book->title = $request->title;
+      $book->author = $request->author;
+      $book->price = $request->price;
+      $book->pages = $request->pages;
+      $book->date = $request->date;
+      $book->sold = 0;
+      $book->save();
+      error_log($book);
+      return redirect('/books/add-book')->with('msg', 'your book published successfully');
+    }
+    public function destroy($id){
+      $book = Book::findOrFail($id);
+      $book->delete();
+      return redirect('/books');
     }
 }

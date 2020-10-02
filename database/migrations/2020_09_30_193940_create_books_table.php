@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->float('price');
             $table->integer('pages');
             $table->date('date');
+            $table->integer('sold');
             $table->timestamps();
         });
     }

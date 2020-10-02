@@ -4,8 +4,8 @@
 <div class="container pb-2 ">
   <div class="row">
     <div class="col-md-12 mt-12">
-      @if($success)
-      <p class="alert alert-success">book added successfully</p>
+      @if(session('msg'))
+      <p class="alert alert-success">{{ session('msg')}}</p>
       @endif
     </div>
     <div class="col-md-12 mt-12">
@@ -13,7 +13,8 @@
     </div>
     <div class="col-md-12">
       <form class="py-2 px-3 border border-primary rounded" action="" method="post">
-        <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
+        @csrf
+        <!-- <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"> -->
         <div class="form-group">
           <label for="">Title</label>
           <input class="form-control" type="text" name="title" required>
